@@ -1,0 +1,21 @@
+name: Test action
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  # Deploy Process
+  deploy:
+    runs-on: ubuntu-18.04 
+    steps:
+    - name: Install SSH Key
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        port: 22
+        script: |
+          cd /odoo/custom/addons
+          git clone https://github.com/Isaac-NSG/Ratings.git
+          
