@@ -16,6 +16,7 @@ jobs:
         key: ${{ secrets.KEY }}
         port: 22
         script: |
+          cd /odoo/custom/addons/
           echo hello >> test2.txt
           echo hello >> test1.txt
           
