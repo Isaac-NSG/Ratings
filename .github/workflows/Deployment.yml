@@ -18,6 +18,6 @@ jobs:
         script: |
           cd /odoo/custom/addons/
           sudo su odoo
-          git clone https://github.com/Isaac-NSG/Ratings.git
+          sudo git clone https://github.com/Isaac-NSG/Ratings.git
           
           
