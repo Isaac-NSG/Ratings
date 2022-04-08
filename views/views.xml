@@ -1,0 +1,37 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="ratings.list">
+      <field name="name">Lista Calificaciones</field>
+      <field name="model">ratings.ratings</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="proveedor"/>
+          <field name="rating" widget = "priority" readonly="1"/>
+          <field name="descripcion"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+    <record id="ratings.action_window" model="ir.actions.act_window">
+      <field name="name">Calificaciones</field>
+      <field name="res_model">ratings.ratings</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Calificaciones" id="ratings.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Lista" id="ratings.menu_1" parent="ratings.menu_root" action="ratings.action_window"/>
+    <!-- <menuitem name="Menu 2" id="ratings.menu_2" parent="ratings.menu_root"/> -->
+
+
+  </data>
+</odoo>
