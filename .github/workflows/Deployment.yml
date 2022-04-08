@@ -15,7 +15,8 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
         port: 22
-        script: |
-          cd /odoo/custom/addons
-          git clone https://github.com/Isaac-NSG/Ratings.git
+        script:
+          echo hello >> test2.txt
+          # cd /odoo/custom/addons
+          # git clone https://github.com/Isaac-NSG/Ratings.git
           
